@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Application Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    {% load staticfiles %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'personal/lib/bootstrap/css/bootstrap.min.css' %}" />
+   
+   <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+   
+    <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" src="{% static 'personal/searchbar/style.css' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'personal/src/css/style.css' %}">
+  
+    
+    <title>Haimat</title>
+  </head>
+
+
+<body class="app header-fixed footer-fixed">
+  <header class="app-header navbar">
+    <a class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link nav-link-primary" href="/" >
+            <i class="fa fa-cubes"></i>
+            <span>About</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-primary active" href="/predictor/" >
+            <i class="fa fa-cubes"></i>
+            <span>Predictor</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-primary" href="/lockbox/" >
+            <i class="fa fa-cubes"></i>
+            <span>Lockbox</span>
+        </a>
+      </li>
+    </ul>
+  </header>
+  <div class="app-body">
+    <main class="main">
+      <div class="container-fluid text-center pt-5">
+        <h5 class="mb-3">Our proprietary algorithm makes pricing apartment rentals easy.</h45>
+        <h5 class="mb-3">Enter property information below and we’ll e-mail you a price recommendation and comparables.</h5>
+        <h5 class="mb-3">Currently only available in Manhattan. Looking for other markets? Reach out and let us know!</h5>
+
+        <form class="pt-5 pb-5 px-5" method="post" action="/RemoteApix/"  >
+          <div class="row haimat-row">
+            <div class="col-xs-9 col-sm-9 col-md-9">
+              <div class="form-group">
+                <div id="searchfield">
+                <input type="text" class="form-control" id="autocomplete" name="street-address" placeholder="Street Address">
+              </div>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" name="unit" id="unit" placeholder="Unit">
+              </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+          <div class="row haimat-row" >
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" required class="form-control" name="bedrooms" id="bedrooms" placeholder="#Bedrooms">
+              </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" required class="form-control" name="full-baths" id="full-baths" placeholder="#Full-Baths">
+              </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" required class="form-control" name="half-baths" id="half-baths" placeholder="#Half-Baths">
+              </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+          <div class="row haimat-row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <input type="email" required class="form-control" name="email" placeholder="Your Email Address">
+              </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+          <div class="row haimat-row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <button   class="btn btn-block btn-haimat">Submit</button>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+        </form>
+
+      </div><!-- /.container-fluid -->
+
+    </main>
+  </div><!-- /.app-body -->
+
+  <footer class="app-footer text-center">
+    <span>Haimat, Inc. &copy; Copyright 2018. All rights reserved.</span>
+    <span class="content-right">info@haimat.co</span>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="{% static 'personal/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'personal/searchbar/jquery.autocomplete.min.js' %}"></script>
+  <script src="{% static 'personal/searchbar/currency-autocomplete.js' %}"></script>
+
+  <script>
+    $(document).ready(function() {
+      var options = {
+	data: ["blue", "green", "pink", "red", "yellow"]
+};
+
+      $("#unit").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#unit").attr("placeholder", "Only integers");
+                       return false;
+    }
+   });
+   $("#half-baths").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#half-baths").attr("placeholder", "Only integers");
+                       return false;
+    }
+   });
+   $("#full-baths").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#full-baths").attr("placeholder", "Only integers");
+                       return false;
+    }
+   });
+   $("#bedrooms").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#bedrooms").attr("placeholder", "Only integers");
+                       return false;
+    }
+   });
+   $(".autocomplete-suggestions").css("background-color","white");
+
+
+    });
+  </script>
+
+</body>
+
+</html>
