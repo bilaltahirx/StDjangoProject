@@ -145,3 +145,23 @@ def getValuePredictions(id,unit,hb,fb,beds):
         return y
     else:
         return [1]
+
+def ThreadFunction(a,b,c,d,e,f):
+    Email=f
+    j=getValuePredictions(a,b,c,d,e)
+
+    if len(j)<10:
+        gmail_user = "hitestmailsite@gmail.com"  
+        gmail_password = "1Islamabad1"
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail("hitestmailsite@gmail.com", Email, "No reccord found for it . we are working on it")
+    else:
+        gmail_user = "hitestmailsite@gmail.com"  
+        gmail_password = "1Islamabad1"
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail("hitestmailsite@gmail.com", Email, "Predicted Price is = "+ str(j[-1]))
+        x=123

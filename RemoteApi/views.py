@@ -8,6 +8,7 @@ from mysite import settings as stcd
 import smtplib
 from .helperFuncs import *
 # Create your views here.
+import threading
 
 class RemoteApiCall(APIView):
     xyz="1233"
@@ -31,24 +32,10 @@ class RemoteApiCall(APIView):
         Bedrooms = request.POST.get('bedrooms')
         HalfBath=request.POST.get('half-baths')
         FullBath=request.POST.get('full-baths')
-        j=getValuePredictions(SA,Unit,HalfBath,FullBath,Bedrooms)
-        if len(j)<10:
-            gmail_user = "hitestmailsite@gmail.com"  
-            gmail_password = "1Islamabad1"
-            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-            server.ehlo()
-            server.login(gmail_user, gmail_password)
-            server.sendmail("hitestmailsite@gmail.com", Email, "No reccord found for it . we are working on it")
-            return render(request, 'personal/predictor.html')
-        else:
-            gmail_user = "hitestmailsite@gmail.com"  
-            gmail_password = "1Islamabad1"
-            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-            server.ehlo()
-            server.login(gmail_user, gmail_password)
-            server.sendmail("hitestmailsite@gmail.com", Email, "Predicted Price is = "+ str(j[-1]))
-            x=123
-            return render(request, 'personal/predictor.html')
+        t=threading.Thread(target=ThreadFunction,args=(SA,Unit,HalfBath,FullBath,Bedrooms,Email))
+        t.start()
+        #ThreadFunction(SA,Unit,HalfBath,FullBath,Bedrooms,Email)
+        return render(request, 'personal/predictor.html')
 
 
  
