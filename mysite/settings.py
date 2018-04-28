@@ -38,7 +38,7 @@ DEBUG = False
 
 
 # Allow all host headers
-ALLOWED_HOSTS = ['predictor-morning.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
