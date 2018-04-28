@@ -27,9 +27,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECRET_KEY = 're!v(uid%rv(n!7qp$q2t#+#8+if)m(xis^fw@5(5(f#l65=v#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'predictor-morning.herokuapp.com']
 
 
 # Application definition
