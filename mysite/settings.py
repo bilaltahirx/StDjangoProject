@@ -13,6 +13,12 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import os
 import django_heroku
 
+import dj_database_url
+
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -27,10 +33,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECRET_KEY = 're!v(uid%rv(n!7qp$q2t#+#8+if)m(xis^fw@5(5(f#l65=v#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
 
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
